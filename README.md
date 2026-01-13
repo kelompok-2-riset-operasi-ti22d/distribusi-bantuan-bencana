@@ -1,73 +1,120 @@
-# Welcome to your Lovable project
+# Optimalisasi Distribusi Bantuan Sembako ke Daerah Bencana
+**Sistem Pendukung Keputusan berbasis Linear Programming (Metode Big M)**
 
-## Project info
+## Deskripsi
+Aplikasi web ini merupakan **Sistem Pendukung Keputusan (SPK)** untuk mengoptimalkan distribusi bantuan sembako ke daerah bencana. Sistem dibangun menggunakan **React + Vite + TypeScript** dan menerapkan pendekatan **Riset Operasi**, khususnya **Linear Programming dengan Metode Big M**, untuk menentukan alokasi bantuan yang optimal dengan biaya minimum.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+Aplikasi ini mendukung multi-lokasi bencana, visualisasi hasil secara real-time, serta penjelasan langkah iterasi metode Big M melalui tabel simplex.
 
-## How can I edit this code?
+🔗 **Demo Aplikasi:**  
+https://distribusi-bantuan-bencana.vercel.app/
 
-There are several ways of editing your application.
+---
 
-**Use Lovable**
+## Team Members
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+| Nama | NPM | Role | GitHub |
+|-----|-----|------|--------|
+| Muhammad Faiz | 220511139 | Frontend & Algorithm Integration | https://github.com/muhammadfaiz19 |
+| Revan Fazry Huda | 220511179 | Algorithm & Logic Implementation | https://github.com/RevanFazryHuda |
+| Moh Syafiq Ade Luwindra | 220511095 | UI/UX & Visualization | https://github.com/adeluindra |
 
-Changes made via Lovable will be committed automatically to this repo.
+---
 
-**Use your preferred IDE**
+## Tech Stack
+- React
+- Vite
+- TypeScript
+- CSS
+- Linear Programming (Big M Method)
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+---
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## Installation
 
-Follow these steps:
+### Prerequisites
+- Node.js (v18+)
+- npm / yarn
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+### Setup
+```bash
+npm install
+```
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+---
 
-# Step 3: Install the necessary dependencies.
-npm i
+## Usage
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+### Development
+```bash
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+Akses melalui:
+```
+http://localhost:5173
+```
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### Build Production
+```bash
+npm run build
+```
 
-**Use GitHub Codespaces**
+---
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## Features
+- Input data distribusi bantuan
+- Validasi kelayakan (feasible / infeasible)
+- Metode Big M & Simplex
+- Tabel iterasi simplex
+- Visualisasi grafik distribusi dan biaya
+- Upload dataset (CSV / Excel)
+- Responsive UI
 
-## What technologies are used for this project?
+---
 
-This project is built with:
+## Model Matematis
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+### Fungsi Tujuan
+Min Z = Σ(cᵢ × xᵢ) + M × Σ(Aᵢ)
 
-## How can I deploy this project?
+Keterangan:
+- cᵢ = biaya distribusi per paket
+- xᵢ = jumlah paket dialokasikan
+- Aᵢ = variabel artifisial
+- M = bilangan penalti besar
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+### Kendala
+- xᵢ ≥ kebutuhan minimum
+- Σxᵢ ≤ stok tersedia
+- xᵢ ≥ 0, Aᵢ ≥ 0
 
-## Can I connect a custom domain to my Lovable project?
+---
 
-Yes, you can!
+## Dataset
+Dataset mencakup:
+- Nama lokasi bencana
+- Kebutuhan minimum bantuan
+- Biaya distribusi per paket
+- Total stok bantuan (opsional)
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+Dataset dapat diinput manual atau diunggah melalui file CSV / Excel.
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+---
+
+## Results
+Sistem menghasilkan:
+- Status solusi (Feasible / Tidak Feasible)
+- Alokasi optimal per lokasi
+- Total biaya distribusi
+- Visualisasi perbandingan kebutuhan vs alokasi
+
+---
+
+## License
+Project ini dibuat untuk **keperluan akademik** mata kuliah **Riset Operasi**.
+
+---
+
+## Acknowledgement
+Terima kasih kepada dosen pengampu dan referensi Riset Operasi yang menjadi dasar pengembangan sistem ini.
