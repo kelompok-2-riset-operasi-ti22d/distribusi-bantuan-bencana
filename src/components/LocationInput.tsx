@@ -19,7 +19,7 @@ export function LocationInput({ locations, onLocationsChange }: LocationInputPro
   const addLocation = () => {
     const newLocation: Location = {
       id: generateId(),
-      name: `Lokasi ${locations.length + 1}`,
+      name: `Kec. Lokasi ${locations.length + 1}`,
       minNeed: 100,
       costPerPacket: 50000,
     };
