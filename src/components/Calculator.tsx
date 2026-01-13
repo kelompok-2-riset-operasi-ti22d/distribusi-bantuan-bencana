@@ -16,9 +16,9 @@ interface CalculatorProps {
 }
 
 const defaultLocations: Location[] = [
-  { id: generateId(), name: "Kabupaten Cianjur", minNeed: 500, costPerPacket: 45000 },
-  { id: generateId(), name: "Kabupaten Sumedang", minNeed: 350, costPerPacket: 55000 },
-  { id: generateId(), name: "Kota Bandung", minNeed: 200, costPerPacket: 35000 },
+  { id: generateId(), name: "Kec. Barus", minNeed: 500, costPerPacket: 55000 },
+  { id: generateId(), name: "Kec. Pandan", minNeed: 350, costPerPacket: 45000 },
+  { id: generateId(), name: "Kec. Kolang", minNeed: 200, costPerPacket: 35000 },
 ];
 
 export function Calculator({ onBack }: CalculatorProps) {
